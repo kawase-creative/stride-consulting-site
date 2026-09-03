@@ -31,9 +31,9 @@ const services = [
 ];
 
 const cases = [
-  { tag: 'MANUFACTURING', title: '全社DXを、構想から現場定着まで推進', result: '18か月で主要12業務を刷新', body: '部門ごとに分断されていた変革テーマを再編。経営会議と現場チームをつなぐ推進基盤を構築しました。' },
-  { tag: 'FINANCIAL', title: '生成AIの実務活用基盤を短期構築', result: '業務時間を年間32,000時間削減', body: 'リスク管理と利用促進を両立するガイドライン、検証環境、ユースケース開発を一体で支援しました。' },
-  { tag: 'RETAIL', title: '赤字プロジェクトの再建と内製化', result: '6か月で計画を正常化', body: '課題の可視化から意思決定ルールの再設計、チーム育成まで伴走し、自走できる運営へ移行しました。' },
+  { tag: 'MANUFACTURING', title: '全社DXを、構想から現場定着まで推進', metric: '12', unit: '業務', lead: '18か月で主要業務を刷新', body: '部門ごとに分断されていた変革テーマを再編。経営会議と現場チームをつなぐ推進基盤を構築しました。' },
+  { tag: 'FINANCIAL', title: '生成AIの実務活用基盤を短期構築', metric: '32,000', unit: '時間／年', lead: '業務時間を削減', body: 'リスク管理と利用促進を両立するガイドライン、検証環境、ユースケース開発を一体で支援しました。' },
+  { tag: 'RETAIL', title: '赤字プロジェクトの再建と内製化', metric: '6', unit: 'か月', lead: 'プロジェクト計画を正常化', body: '課題の可視化から意思決定ルールの再設計、チーム育成まで伴走し、自走できる運営へ移行しました。' },
 ];
 
 export default function Home() {
@@ -146,16 +146,43 @@ export default function Home() {
           <h2>変化が数字に表れるまで。</h2>
           <p>戦略の美しさではなく、事業と現場に起きた変化を成果と考えます。</p>
         </div>
-        <div className="case-grid">
-          {cases.map((item, i) => (
-            <article className="case-card" key={item.tag}>
-              <div className="case-top"><span>CASE 0{i + 1}</span><span>{item.tag}</span></div>
-              <h3>{item.title}</h3>
-              <strong>{item.result}</strong>
-              <p>{item.body}</p>
-              <a href="#contact">この領域について相談する <ArrowUpRight /></a>
-            </article>
-          ))}
+        <div className="case-showcase">
+          <article className="case-featured">
+            <div className="case-featured-photo" aria-hidden="true" />
+            <div className="case-featured-shade" aria-hidden="true" />
+            <div className="case-featured-content">
+              <div className="case-top"><span>CASE 01</span><span>{cases[0].tag}</span></div>
+              <div className="case-featured-bottom">
+                <p className="case-label">FLAGSHIP PROJECT</p>
+                <h3>{cases[0].title}</h3>
+                <div className="case-outcome">
+                  <strong>{cases[0].metric}<small>{cases[0].unit}</small></strong>
+                  <span>{cases[0].lead}</span>
+                </div>
+                <p>{cases[0].body}</p>
+                <a href="#contact">この事例について相談する <ArrowUpRight /></a>
+              </div>
+            </div>
+          </article>
+
+          <div className="case-stack">
+            {cases.slice(1).map((item, i) => (
+              <article className="case-compact" key={item.tag}>
+                <div className="case-top"><span>CASE 0{i + 2}</span><span>{item.tag}</span></div>
+                <div className="case-compact-main">
+                  <div className="case-compact-copy">
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                  <div className="case-compact-result">
+                    <strong>{item.metric}<small>{item.unit}</small></strong>
+                    <span>{item.lead}</span>
+                  </div>
+                </div>
+                <a href="#contact">この領域について相談する <ArrowUpRight /></a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -173,7 +200,10 @@ export default function Home() {
           <div className="section-kicker light-kicker"><span>05</span><p>START A CONVERSATION</p></div>
           <h2>まだ輪郭のない課題から、<br />お聞かせください。</h2>
           <p>ご相談内容が固まっていなくても構いません。現在地を整理し、次の一歩を一緒に考えます。</p>
-          <div className="contact-points"><span><Check /> 初回相談無料</span><span><Check /> 2営業日以内に返信</span></div>
+          <div className="contact-points">
+            <span><Check /><strong>初回相談無料</strong><small>費用はかかりません</small></span>
+            <span><Check /><strong>2営業日以内に返信</strong><small>担当者よりご連絡します</small></span>
+          </div>
         </div>
         <form className="contact-form">
           <label>お名前<span>必須</span><input name="name" placeholder="例）山田 太郎" /></label>
