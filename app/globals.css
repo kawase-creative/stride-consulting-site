@@ -176,6 +176,16 @@ h1 { margin: 0; font-family: "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif
 .contact-form label > span { position: absolute; right: 0; color: var(--blue); font-size: 9px; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 14px 0; border: 0; border-bottom: 1px solid #bcc3c5; border-radius: 0; outline: none; font: inherit; font-weight: 400; background: transparent; }
 .contact-form input:focus, .contact-form textarea:focus { border-color: var(--blue); }
+.contact-form .field-error { color: #a32e2e; }
+.contact-form .field-error input { margin-top: 1px; padding: 13px 12px; border: 1px solid #d94b4b; background: #fff4f3; box-shadow: 0 0 0 3px rgba(217,75,75,.08); }
+.contact-form .field-error input:focus { border-color: #b52e2e; box-shadow: 0 0 0 3px rgba(217,75,75,.14); }
+.field-error-message { margin-top: -2px; color: #b52e2e; font-size: 11px; font-weight: 700; line-height: 1.5; }
+.form-error-summary { padding: 14px 16px; border-left: 4px solid #d94b4b;; background: #fff2f1; color: #922929; font-size: 12px; font-weight: 700; line-height: 1.7; }
+.form-success { padding: 20px; display: grid; grid-template-columns: 30px 1fr; gap: 13px; border: 1px solid #73bedc; background: #edf9fd; color: #0b5d7d; animation: message-in .35s ease both; }
+.form-success svg { width: 27px; height: 27px; }
+.form-success strong { display: block; font-size: 18px; line-height: 1.45; }
+.form-success p { margin: 6px 0 0; font-size: 12px; line-height: 1.7; color: #3e7184; }
+@keyframes message-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 .contact-form button { min-height: 66px; margin-top: 6px; padding: 0 22px; display: flex; align-items: center; justify-content: space-between; border: 0; color: white; background: var(--blue); font: inherit; font-weight: 700; cursor: pointer; }
 .contact-form button:hover { background: var(--blue-dark); }
 .contact-form button svg { width: 18px; }

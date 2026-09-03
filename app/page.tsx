@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Users,
 } from 'lucide-react';
+import { ContactForm } from './contact-form';
 
 const metrics = [
   { label: '継続支援率', value: '96.4', suffix: '%', note: '長期的な変革を共に推進' },
@@ -205,14 +206,7 @@ export default function Home() {
             <span><Check /><strong>2営業日以内に返信</strong><small>担当者よりご連絡します</small></span>
           </div>
         </div>
-        <form className="contact-form">
-          <label>お名前<span>必須</span><input name="name" placeholder="例）山田 太郎" /></label>
-          <label>会社名<span>必須</span><input name="company" placeholder="例）株式会社ストライド" /></label>
-          <label>メールアドレス<span>必須</span><input name="email" type="email" placeholder="example@company.jp" /></label>
-          <label>ご相談内容<span>任意</span><textarea name="message" rows={4} placeholder="課題感やご希望をお聞かせください" /></label>
-          <button type="button">無料相談を申し込む <ArrowUpRight /></button>
-          <small>このフォームはデザイン確認用のため、送信機能はまだ接続されていません。</small>
-        </form>
+        <ContactForm />
       </section>
 
       <footer>
