@@ -1,6 +1,5 @@
 import {
   ArrowDown,
-  ArrowRight,
   ArrowUpRight,
   BrainCircuit,
   ChartNoAxesCombined,
@@ -58,8 +57,8 @@ export default function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow light">STRATEGY TO REALITY</p>
-          <h1>構想を、<br />現場の前進に。</h1>
-          <p className="hero-lead">戦略を描くだけで終わらせない。<br />チームの一員として、変革が根づくまで伴走します。</p>
+          <h1>構想を、<br className="hero-break" />現場の前進に。</h1>
+          <p className="hero-lead">戦略を描くだけで終わらせない。<br className="responsive-break" />チームの一員として、変革が根づくまで伴走します。</p>
           <div className="hero-actions">
             <a className="button primary" href="#contact"><span>無料相談を申し込む</span><ArrowUpRight /></a>
             <a className="button secondary" href="#approach"><span>私たちについて</span><ArrowDown /></a>
@@ -86,13 +85,12 @@ export default function Home() {
         <div className="oversized-word" aria-hidden="true">CHALLENGES</div>
         <div className="challenge-inner">
           <p className="eyebrow light">よくある経営課題</p>
-          <h2>変えたい意思はある。<br />けれど、前に進まない。</h2>
+          <h2>変えたい意思はある。<br className="responsive-break" />けれど、前に進まない。</h2>
           <div className="challenge-grid">
             {challenges.map((challenge, i) => (
               <article key={challenge}>
                 <span>0{i + 1}</span>
                 <p>{challenge}</p>
-                <ArrowRight />
               </article>
             ))}
           </div>
@@ -102,7 +100,7 @@ export default function Home() {
       <section className="approach" id="approach">
         <div className="section-intro">
           <div className="section-kicker"><span>02</span><p>OUR APPROACH</p></div>
-          <h2>外から助言するのではなく、<br />内側で変化をつくる。</h2>
+          <h2>外から助言するのではなく、<br className="responsive-break" />内側で変化をつくる。</h2>
           <p>私たちは、提言書を納品して終わるコンサルティングをしません。目的を共有し、現場に入り、意思決定と実行の両方を前へ動かします。</p>
         </div>
         <div className="approach-visual">
@@ -191,7 +189,7 @@ export default function Home() {
         <div className="promise-copy">
           <ShieldCheck />
           <p className="eyebrow">OUR PROMISE</p>
-          <h2>知見を残し、<br />支援を終える。</h2>
+          <h2>知見を残し、<br className="responsive-break" />支援を終える。</h2>
         </div>
         <p>私たちのゴールは、支援がなくても改善が続く状態です。プロジェクトの過程をブラックボックスにせず、判断の基準、運営の型、学びを組織の資産として残します。</p>
       </section>
@@ -199,7 +197,7 @@ export default function Home() {
       <section className="contact" id="contact">
         <div className="contact-copy">
           <div className="section-kicker light-kicker"><span>05</span><p>START A CONVERSATION</p></div>
-          <h2>まだ輪郭のない課題から、<br />お聞かせください。</h2>
+          <h2>まだ輪郭のない課題から、<br className="responsive-break" />お聞かせください。</h2>
           <p>ご相談内容が固まっていなくても構いません。現在地を整理し、次の一歩を一緒に考えます。</p>
           <div className="contact-points">
             <span><Check /><strong>初回相談無料</strong><small>費用はかかりません</small></span>
